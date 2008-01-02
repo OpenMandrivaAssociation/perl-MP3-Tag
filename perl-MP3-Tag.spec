@@ -17,6 +17,7 @@ Buildrequires:	perl-devel
 Requires:	perl-Compress-Zlib
 BuildRequires:	perl(Compress::Zlib)
 BuildArch:	noarch
+BuildRoot:	%{_tmppath}/%{name}-%{version}
 
 %description
 Tag is a wrapper module to read different tags of mp3 files. It provides an
