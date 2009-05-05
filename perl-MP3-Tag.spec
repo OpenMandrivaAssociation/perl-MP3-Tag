@@ -1,6 +1,6 @@
 %define module	MP3-Tag
 %define name	perl-%{module}
-%define version 0.9714
+%define version 1.00
 %define release %mkrel 1
 
 Name:		%{name}
@@ -11,9 +11,6 @@ License:	GPL or Artistic
 Group:		Development/Perl
 URL:		http://search.cpan.org/dist/%{module}
 Source:		http://www.cpan.org/modules/by-module/MP3/%{module}-%{version}.tar.bz2
-%if %{mdkversion} < 1010
-Buildrequires:	perl-devel
-%endif
 Requires:	perl-Compress-Zlib
 BuildRequires:	perl(Compress::Zlib)
 BuildArch:	noarch
@@ -31,6 +28,8 @@ by parsing CDDB files, .inf file and the filename).
 
 %prep
 %setup -q -n %{module}-%{version}
+# requires CDDB connection
+rm -f t/mp3tag.t
 chmod -R u+w examples
 chmod 755 examples/*.pl examples/mp3info2 examples/typeset_audio_dir
 
@@ -53,5 +52,7 @@ rm -rf %{buildroot}
 %defattr(-,root,root)
 %doc Changes README.txt TODO examples
 %{perl_vendorlib}/MP3
+%{perl_vendorlib}/Encode
+%{perl_vendorlib}/Normalize
 %{_mandir}/*/*
 
