@@ -11,10 +11,10 @@ License:	GPL or Artistic
 Group:		Development/Perl
 URL:		http://search.cpan.org/dist/%{module}
 Source:		http://www.cpan.org/modules/by-module/MP3/%{module}-%{version}.tar.bz2
-Requires:	perl-Compress-Zlib
+Requires:	    perl(Compress::Zlib)
 BuildRequires:	perl(Compress::Zlib)
-BuildArch:	noarch
-BuildRoot:	%{_tmppath}/%{name}-%{version}
+BuildArch:	    noarch
+BuildRoot:      %{_tmppath}/%{name}-%{version}
 
 %description
 Tag is a wrapper module to read different tags of mp3 files. It provides an
