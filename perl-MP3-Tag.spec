@@ -1,7 +1,7 @@
 %define module	MP3-Tag
 %define name	perl-%{module}
-%define version 1.00
-%define release %mkrel 2
+%define version 1.10
+%define release %mkrel 1
 %define _requires_exceptions perl(\\(Normalize::Text::Normalize_Fields\\|Music_Normalize_Fields\\))
 
 
