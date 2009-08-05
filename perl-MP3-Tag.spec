@@ -1,22 +1,23 @@
-%define module	MP3-Tag
-%define name	perl-%{module}
-%define version 1.11
-%define release %mkrel 1
+%define upstream_name	 MP3-Tag
+%define upstream_version 1.11
+
 %define _requires_exceptions perl(\\(Normalize::Text::Normalize_Fields\\|Music_Normalize_Fields\\))
 
+Name:       perl-%{upstream_name}
+Version:    %perl_convert_version %{upstream_version}
+Release:    %mkrel 1
 
-Name:		%{name}
-Version:	%{version}
-Release:	%{release}
 Summary:	Module for reading tags of MP3 audio files 
-License:	GPL or Artistic
+License:	GPL+ or Artistic
 Group:		Development/Perl
-URL:		http://search.cpan.org/dist/%{module}
-Source:		http://www.cpan.org/modules/by-module/MP3/%{module}-%{version}.tar.bz2
-Requires:	    perl(Compress::Zlib)
+Url:		http://search.cpan.org/dist/%{upstream_name}
+Source0:	http://www.cpan.org/modules/by-module/MP3/%{upstream_name}-%{upstream_version}.tar.bz2
+
 BuildRequires:	perl(Compress::Zlib)
 BuildArch:	    noarch
-BuildRoot:      %{_tmppath}/%{name}-%{version}
+BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}
+
+Requires:	    perl(Compress::Zlib)
 
 %description
 Tag is a wrapper module to read different tags of mp3 files. It provides an
@@ -29,7 +30,7 @@ MP3::Tag::LastResort are supported for read access (the information obtained
 by parsing CDDB files, .inf file and the filename).
 
 %prep
-%setup -q -n %{module}-%{version}
+%setup -q -n %{upstream_name}-%{upstream_version}
 # requires CDDB connection
 rm -f t/mp3tag.t
 chmod -R u+w examples
@@ -57,4 +58,3 @@ rm -rf %{buildroot}
 %{perl_vendorlib}/Encode
 %{perl_vendorlib}/Normalize
 %{_mandir}/*/*
-
