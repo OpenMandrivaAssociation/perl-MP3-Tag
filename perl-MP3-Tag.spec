@@ -1,5 +1,5 @@
 %define upstream_name	 MP3-Tag
-%define upstream_version 1.11
+%define upstream_version 1.12
 
 %define _requires_exceptions perl(\\(Normalize::Text::Normalize_Fields\\|Music_Normalize_Fields\\))
 
@@ -11,7 +11,7 @@ Summary:	Module for reading tags of MP3 audio files
 License:	GPL+ or Artistic
 Group:		Development/Perl
 Url:		http://search.cpan.org/dist/%{upstream_name}
-Source0:	http://www.cpan.org/modules/by-module/MP3/%{upstream_name}-%{upstream_version}.tar.bz2
+Source0:	http://www.cpan.org/modules/by-module/MP3/%{upstream_name}-%{upstream_version}.tar.gz
 
 BuildRequires:	perl(Compress::Zlib)
 BuildArch:	    noarch
@@ -42,7 +42,7 @@ chmod 755 examples/*.pl examples/mp3info2 examples/typeset_audio_dir
 %make
 
 %check
-%{__make} test
+%make test
 
 %install
 rm -rf %{buildroot}
