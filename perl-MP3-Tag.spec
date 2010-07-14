@@ -1,5 +1,5 @@
 %define upstream_name	 MP3-Tag
-%define upstream_version 1.12
+%define upstream_version 1.13
 
 %define _requires_exceptions perl(\\(Normalize::Text::Normalize_Fields\\|Music_Normalize_Fields\\))
 
