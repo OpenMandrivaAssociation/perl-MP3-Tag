@@ -1,11 +1,7 @@
 %define upstream_name	 MP3-Tag
 %define upstream_version 1.14
 
-%if %{_use_internal_dependency_generator}
-%define __noautoreq 'perl\\(Normalize::Text::Normalize_Fields\\)|perl\\(Music_Normalize_Fields\\)'
-%else
-%define _requires_exceptions perl(\\(Normalize::Text::Normalize_Fields\\|Music_Normalize_Fields\\))
-%endif
+%global __requires_exclude perl\\((Normalize::Text::Normalize_Fields|Music_Normalize_Fields)\\)
 
 Name:		perl-%{upstream_name}
 Version:	%perl_convert_version %{upstream_version}
