@@ -10,7 +10,7 @@ Release:	1
 Summary:	Module for reading tags of MP3 audio files 
 License:	GPL+ or Artistic
 Group:		Development/Perl
-Url:		http://search.cpan.org/dist/%{upstream_name}
+Url:		https://search.cpan.org/dist/%{upstream_name}
 Source0:	http://www.cpan.org/modules/by-module/MP3/%{upstream_name}-%{upstream_version}.tar.gz
 
 BuildRequires:	perl-devel
