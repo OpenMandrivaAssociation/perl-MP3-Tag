@@ -1,17 +1,15 @@
 %define upstream_name	 MP3-Tag
-%define upstream_version 1.14
-
 %global __requires_exclude perl\\((Normalize::Text::Normalize_Fields|Music_Normalize_Fields)\\)
 
 Name:		perl-%{upstream_name}
-Version:	%perl_convert_version %{upstream_version}
-Release:	1
+Version:	1.14
+Release:	2
 
 Summary:	Module for reading tags of MP3 audio files 
 License:	GPL+ or Artistic
 Group:		Development/Perl
-Url:		https://search.cpan.org/dist/%{upstream_name}
-Source0:	http://www.cpan.org/modules/by-module/MP3/%{upstream_name}-%{upstream_version}.tar.gz
+Url:		https://metacpan.org/dist/%{upstream_name}
+Source0:	http://www.cpan.org/modules/by-module/MP3/%{upstream_name}-%{version}.tar.gz
 
 BuildRequires:	make
 BuildRequires:	perl-devel
@@ -31,7 +29,7 @@ MP3::Tag::LastResort are supported for read access (the information obtained
 by parsing CDDB files, .inf file and the filename).
 
 %prep
-%setup -q -n %{upstream_name}-%{upstream_version}
+%setup -q -n %{upstream_name}-%{version}
 # requires CDDB connection
 rm -f t/mp3tag.t
 chmod -R u+w examples
