@@ -1,15 +1,16 @@
 %define upstream_name	 MP3-Tag
+%define upstream_version 1.16
 %global __requires_exclude perl\\((Normalize::Text::Normalize_Fields|Music_Normalize_Fields)\\)
 
 Name:		perl-%{upstream_name}
-Version:	1.14
-Release:	2
+Version:	1.16
+Release:	1
 
 Summary:	Module for reading tags of MP3 audio files 
 License:	GPL+ or Artistic
 Group:		Development/Perl
 Url:		https://metacpan.org/dist/%{upstream_name}
-Source0:	http://www.cpan.org/modules/by-module/MP3/%{upstream_name}-%{version}.tar.gz
+Source0:	https://cpan.metacpan.org/authors/id/I/IL/ILYAZ/modules/MP3-Tag-1.16.zip
 
 BuildRequires:	make
 BuildRequires:	perl-devel
